@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#176b45">
+<meta name="description" content="PieceWork Connect connects people looking for piece jobs with people who need reliable workers.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>PieceWork Connect</title>
+<style>
+:root{--green:#176b45;--green2:#21885a;--mint:#eaf5ee;--ink:#17251d;--muted:#68776e;--line:#e3eae5;--paper:#f6f8f6;--white:#fff;--amber:#fff4d9}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:760px;margin:auto;min-height:100vh;background:var(--paper);padding-bottom:86px}.top{background:var(--green);color:white;padding:20px 18px 22px;border-radius:0 0 22px 22px}.brandrow{display:flex;align-items:center;justify-content:space-between}.brand{font-size:20px;font-weight:850;letter-spacing:-.5px}.tag{font-size:12px;color:#d7eee0;margin-top:2px}.avatar{width:40px;height:40px;border-radius:50%;background:#ffffff25;display:grid;place-items:center;font-size:20px}.hero{margin-top:23px}.hero h1{font-size:25px;line-height:1.16;margin:0 0 7px;max-width:440px}.hero p{font-size:13px;color:#dceee3;margin:0}.searchbar{display:flex;gap:8px;background:white;border-radius:13px;padding:7px;margin-top:17px}.searchbar input{border:0;outline:0;min-width:0;flex:1;padding:8px;color:var(--ink)}.searchbar button{background:var(--green);color:white;border:0;border-radius:9px;padding:0 14px}.content{padding:18px}.sectionhead{display:flex;align-items:center;justify-content:space-between;margin:4px 0 12px}.sectionhead h2{font-size:17px;margin:0}.small{font-size:12px;color:var(--muted)}.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}.quick button{border:1px solid var(--line);background:white;border-radius:15px;text-align:left;padding:15px;min-height:110px;color:var(--ink)}.quick .ico{font-size:25px}.quick strong{display:block;margin:7px 0 3px}.quick span{font-size:12px;color:var(--muted)}.chips{display:flex;gap:8px;overflow:auto;padding:1px 0 13px}.chip{white-space:nowrap;border:1px solid var(--line);background:white;border-radius:30px;padding:8px 13px;font-size:12px;color:#425349}.chip.active{background:var(--mint);border-color:#b7d8c3;color:var(--green);font-weight:700}.cards{display:grid;gap:10px}.card{background:white;border:1px solid var(--line);border-radius:15px;padding:14px}.cardtop{display:flex;gap:11px;align-items:center}.personicon{width:44px;height:44px;border-radius:13px;background:var(--mint);display:grid;place-items:center;font-size:22px;flex-shrink:0}.card h3{font-size:15px;margin:0 0 3px}.meta{font-size:12px;color:var(--muted)}.pill{display:inline-block;background:var(--mint);color:var(--green);font-size:10px;font-weight:700;padding:5px 8px;border-radius:20px;margin:9px 4px 0 0}.cardfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}.btn{border:0;border-radius:10px;background:var(--green);color:white;padding:10px 13px;font-weight:700;font-size:12px}.btn.secondary{background:var(--mint);color:var(--green)}.btn.outline{background:white;color:var(--green);border:1px solid #b8d8c4}.btn.full{width:100%;padding:13px}.tabs{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;z-index:5;padding-bottom:env(safe-area-inset-bottom)}.tabsin{width:100%;max-width:760px;display:grid;grid-template-columns:repeat(5,1fr)}.tab{border:0;background:white;color:#758178;padding:10px 2px 8px;font-size:10px}.tab b{display:block;font-size:20px;margin-bottom:3px;font-weight:500}.tab.active{color:var(--green);font-weight:800}.view{display:none}.view.active{display:block}.form{display:grid;gap:12px}.field label{display:block;font-size:12px;font-weight:750;margin-bottom:6px}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px;background:white;outline-color:var(--green)}.field textarea{min-height:85px;resize:vertical}.notice{padding:12px;border-radius:12px;background:var(--amber);font-size:12px;color:#71561a;line-height:1.45;margin-bottom:14px}.empty{text-align:center;padding:28px 12px;color:var(--muted);background:white;border:1px dashed #cbd8ce;border-radius:15px}.empty strong{display:block;color:var(--ink);margin:7px}.pageTitle{font-size:21px;margin:5px 0 4px}.subTitle{font-size:13px;color:var(--muted);margin:0 0 17px}.hide{display:none!important}.adminline{font-size:11px;color:var(--muted);text-align:center;margin:22px 0 4px}
+@media(min-width:600px){.content{padding:22px 26px}.top{padding:24px 26px}.hero h1{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="brandrow"><div><div class="brand">🟢 PieceWork Connect</div><div class="tag">Find work. Find workers.</div></div><div class="avatar">👋</div></div>
+ <div class="hero"><h1>Small jobs. Real opportunities.</h1><p>Connect with people ready to work in your community.</p></div>
+ <div class="searchbar"><input id="homeSearch" placeholder="Search jobs, skills or location"><button onclick="doSearch()">Search</button></div>
+</header>
+
+<main class="content">
+<section id="homeView" class="view active">
+ <div class="sectionhead"><h2>What would you like to do?</h2></div>
+ <div class="quick">
+  <button onclick="showView('jobsView','jobsTab')"><div class="ico">💼</div><strong>Find a job</strong><span>Browse piece jobs near you</span></button>
+  <button onclick="showView('workersView','workersTab')"><div class="ico">👷</div><strong>Find a worker</strong><span>Connect with available people</span></button>
+  <button onclick="showView('postView','postTab')"><div class="ico">📢</div><strong>Post a job</strong><span>Advertise work opportunities</span></button>
+  <button onclick="showView('registerView','profileTab')"><div class="ico">📝</div><strong>Register</strong><span>Create your worker or employer profile</span></button>
+ </div>
+ <div class="sectionhead"><h2>Recent job opportunities</h2><button class="btn secondary" onclick="showView('jobsView','jobsTab')">See all</button></div>
+ <div id="homeJobs" class="cards"></div>
+ <div class="adminline">PieceWork Connect · Community opportunity platform</div>
+</section>
+
+<section id="jobsView" class="view">
+ <h1 class="pageTitle">Find a job</h1><p class="subTitle">Explore temporary work opportunities.</p>
+ <div class="field" style="margin-bottom:12px"><input id="jobSearch" placeholder="Search title, category or town" oninput="renderJobs()"></div>
+ <div class="chips" id="jobChips"></div><div id="jobList" class="cards"></div>
+</section>
+
+<section id="workersView" class="view">
+ <h1 class="pageTitle">Find a worker</h1><p class="subTitle">Find people by skill and location.</p>
+ <div class="field" style="margin-bottom:12px"><input id="workerSearch" placeholder="Search skills, name or town" oninput="renderWorkers()"></div>
+ <div class="chips" id="workerChips"></div><div id="workerList" class="cards"></div>
+</section>
+
+<section id="postView" class="view">
+ <h1 class="pageTitle">Post a job</h1><p class="subTitle">Tell local workers what help you need.</p>
+ <div class="notice">Please post genuine opportunities only. Agree on the work, payment and timing before work begins. Never request a recruitment fee from job seekers.</div>
+ <form id="jobForm" class="form">
+  <div class="field"><label>Job title *</label><input name="title" required placeholder="e.g. Garden cleaning"></div>
+  <div class="field"><label>Category *</label><select name="category" required><option value="">Choose category</option><option>Domestic work</option><option>Gardening</option><option>General labour</option><option>Construction</option><option>Agriculture</option><option>Hospitality</option><option>Transport</option><option>Other services</option></select></div>
+  <div class="field"><label>Town / suburb *</label><input name="location" required placeholder="e.g. Bulawayo CBD"></div>
+  <div class="field"><label>Description *</label><textarea name="description" required placeholder="Describe the work, hours and requirements"></textarea></div>
+  <div class="field"><label>Payment amount (optional)</label><input name="payment" type="number" min="0" placeholder="e.g. 15"></div>
+  <div class="field"><label>Payment basis</label><select name="paymentType"><option>For the job</option><option>Per day</option><option>Per hour</option></select></div>
+  <div class="field"><label>Work date</label><input name="date" type="date"></div>
+  <div class="field"><label>Your WhatsApp number *</label><input name="phone" required inputmode="tel" placeholder="e.g. 263771234567"></div>
+  <button class="btn full" type="submit">Publish job</button>
+ </form>
+</section>
+
+<section id="registerView" class="view">
+ <h1 class="pageTitle">Create your profile</h1><p class="subTitle">Register as a worker or an employer.</p>
+ <div class="notice">Create an account with an email address and password. Your profile will be stored online so you can use PieceWork Connect on different devices.</div>
+  <div class="field"><label>Email address *</label><input name="email" type="email" required placeholder="you@example.com" autocomplete="email"></div>
+  <div class="field"><label>Password (at least 6 characters) *</label><input name="password" type="password" required minlength="6" autocomplete="new-password" placeholder="Create a password"></div>
+ <form id="workerForm" class="form">
+  <div class="field"><label>I want to register as *</label><select name="role" required><option value="worker">A worker looking for jobs</option><option value="employer">An employer looking for workers</option></select></div>
+  <div class="field"><label>Full name *</label><input name="name" required placeholder="Your full name"></div>
+  <div class="field"><label>Phone / WhatsApp number *</label><input name="phone" required inputmode="tel" placeholder="e.g. 263771234567"></div>
+  <div class="field"><label>Town / suburb *</label><input name="location" required placeholder="e.g. Bulawayo"></div>
+  <div class="field"><label>Skills / services (separate with commas)</label><input name="skills" placeholder="Gardening, cleaning, laundry"></div>
+  <div class="field"><label>Availability</label><select name="availability"><option>Available now</option><option>Available on weekends</option><option>Available on request</option></select></div>
+  <div class="field"><label>Short introduction</label><textarea name="bio" placeholder="Tell employers about your experience"></textarea></div>
+  <button class="btn full" type="submit">Create account</button>
+ </form>
+ <div class="notice" style="margin-top:16px">Already registered? Sign in below.</div>
+ <form id="loginForm" class="form">
+  <div class="field"><label>Email address</label><input name="email" type="email" required autocomplete="email"></div>
+  <div class="field"><label>Password</label><input name="password" type="password" required autocomplete="current-password"></div>
+  <button class="btn full" type="submit">Sign in</button>
+ </form>
+</section>
+
+<section id="profileView" class="view">
+ <h1 class="pageTitle">My account</h1><p class="subTitle">Your online account and job posts.</p>
+ <div id="myProfile" class="cards"></div>
+ <button class="btn outline full" style="margin-top:12px" id="logoutBtn" type="button">Sign out</button>
+ <p class="small" style="margin-top:14px">Your account is managed securely by Firebase Authentication.</p>
+</section>
+</main>
+<nav class="tabs"><div class="tabsin">
+ <button id="homeTab" class="tab active" onclick="showView('homeView','homeTab')"><b>⌂</b>Home</button>
+ <button id="jobsTab" class="tab" onclick="showView('jobsView','jobsTab')"><b>▤</b>Jobs</button>
+ <button id="workersTab" class="tab" onclick="showView('workersView','workersTab')"><b>♙</b>Workers</button>
+ <button id="postTab" class="tab" onclick="showView('postView','postTab')"><b>＋</b>Post job</button>
+ <button id="profileTab" class="tab" onclick="showView('profileView','profileTab')"><b>◎</b>Account</button>
+</div></nav>
+</div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+import { getFirestore, collection, addDoc, doc, setDoc, getDoc, onSnapshot, query, where, orderBy } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC2jc1Yn3YvOsV4FIwNqc6XWZikNlWTrvU",
+  authDomain: "piecework-connect-2bd9b.firebaseapp.com",
+  projectId: "piecework-connect-2bd9b",
+  storageBucket: "piecework-connect-2bd9b.firebasestorage.app",
+  messagingSenderId: "608113236724",
+  appId: "1:608113236724:web:93678e2cdbfcc8487ddca1"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const store = getFirestore(app);
+let currentProfile = null;
+let jobs = [];
+let workers = [];
+let category = 'All';
+let jobsUnsub = null;
+let workersUnsub = null;
+
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function message(msg){alert(msg)}
+function showView(view,tab){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));document.getElementById(view).classList.add('active');document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.getElementById(tab).classList.add('active');if(view==='jobsView')renderJobs();if(view==='workersView')renderWorkers();if(view==='profileView')renderProfile();window.scrollTo(0,0)}
+function wa(phone,msg){if(!String(phone||'').trim()){message('The poster has not provided a contact number.');return}let p=String(phone).replace(/\D/g,'');if(p.startsWith('0'))p='263'+p.slice(1);if(!p.startsWith('263'))p='263'+p;if(p.length<11){message('Please check the contact number.');return}window.open('https://wa.me/'+p+'?text='+encodeURIComponent(msg),'_blank')}
+function jobCard(j){return `<article class="card"><div class="cardtop"><div class="personicon">🧰</div><div style="min-width:0;flex:1"><h3>${esc(j.title)}</h3><div class="meta">📍 ${esc(j.location)} · ${esc(j.category)}</div></div></div><p class="meta" style="line-height:1.5;margin:10px 0 0">${esc(j.description)}</p><span class="pill">${esc(j.status||'open')}</span><div class="cardfoot"><div><strong>${j.payment?('$'+esc(j.payment)):'Payment negotiable'}</strong><div class="meta">${esc(j.paymentType||'')}${j.date?' · '+esc(j.date):''}</div></div><button class="btn" onclick="window.pwcWa('${esc(j.phone)}','Hello, I saw your job advertisement on PieceWork Connect: ${esc(j.title)}. Is it still available?')">WhatsApp</button></div></article>`}
+function workerCard(u){let skills=(u.skills||'').split(',').map(s=>s.trim()).filter(Boolean);return `<article class="card"><div class="cardtop"><div class="personicon">👤</div><div style="flex:1"><h3>${esc(u.name)}</h3><div class="meta">📍 ${esc(u.location)}</div></div><span class="pill">${esc(u.availability||'Available')}</span></div><div>${skills.map(s=>`<span class="pill">${esc(s)}</span>`).join('')}</div><p class="meta" style="line-height:1.5">${esc(u.bio||'Available for temporary work.')}</p><div class="cardfoot"><span class="meta">Worker profile</span><button class="btn" onclick="window.pwcWa('${esc(u.phone)}','Hello ${esc(u.name)}, I found your profile on PieceWork Connect. Are you available for a piece job?')">Contact worker</button></div></article>`}
+window.pwcWa=wa;
+function renderJobs(){let q=(document.getElementById('jobSearch')?.value||'').toLowerCase();let list=jobs.filter(j=>(j.status||'open')==='open'&&(category==='All'||j.category===category)&&[j.title,j.category,j.location,j.description].join(' ').toLowerCase().includes(q));document.getElementById('jobList').innerHTML=list.length?list.map(jobCard).join(''):'<div class="empty">🔎<strong>No jobs found</strong>Try another search or category.</div>';document.getElementById('jobChips').innerHTML=['All',...new Set(jobs.map(j=>j.category).filter(Boolean))].map(c=>`<button class="chip ${category===c?'active':''}" onclick="window.pwcCategory('${esc(c)}')">${esc(c)}</button>`).join('')}
+window.pwcCategory=(c)=>{category=c;renderJobs()};
+function renderWorkers(){let q=(document.getElementById('workerSearch')?.value||'').toLowerCase();let list=workers.filter(u=>[u.name,u.location,u.skills,u.bio].join(' ').toLowerCase().includes(q));document.getElementById('workerList').innerHTML=list.length?list.map(workerCard).join(''):'<div class="empty">👷<strong>No workers found</strong>Sign in to view worker listings, or try another search.</div>';document.getElementById('workerChips').innerHTML=['All','Cleaning','Gardening','Laundry','General labour'].map(c=>`<button class="chip" onclick="document.getElementById('workerSearch').value='${c==='All'?'':c}';renderWorkers()">${c}</button>`).join('')}
+function renderHome(){let list=jobs.filter(j=>(j.status||'open')==='open').slice(0,3);document.getElementById('homeJobs').innerHTML=list.length?list.map(jobCard).join(''):'<div class="empty">No jobs posted yet. Be the first to post an opportunity.</div>'}
+function renderProfile(){let box=document.getElementById('myProfile');if(!auth.currentUser){box.innerHTML='<div class="empty"><strong>You are not signed in.</strong>Create a profile or sign in to manage your account.</div>';return}let u=currentProfile;if(!u){box.innerHTML='<div class="empty">Loading your account...</div>';return}box.innerHTML=`<div class="card"><h3>${esc(u.name)}</h3><div class="meta">${esc(u.role)} · ${esc(u.location)}</div><p class="meta">${esc(u.phone)}</p><p class="meta">${esc(u.email)}</p><p class="meta">${esc(u.skills||'')}</p></div>`;let mine=jobs.filter(j=>j.employerId===auth.currentUser.uid);if(mine.length)box.innerHTML+=`<h3 style="font-size:15px;margin:16px 0 0">My job posts</h3>`+mine.map(jobCard).join('')}
+
+async function loadProfile(user){if(!user){currentProfile=null;return}const snap=await getDoc(doc(store,'users',user.uid));currentProfile=snap.exists()?snap.data():null;renderProfile()}
+function subscribeJobs(){if(jobsUnsub)jobsUnsub();jobsUnsub=onSnapshot(query(collection(store,'jobs'),orderBy('createdAt','desc')),(snap)=>{jobs=snap.docs.map(d=>({id:d.id,...d.data()}));renderHome();renderJobs();renderProfile()},(err)=>{console.error(err);message('Could not load jobs: '+err.message)})}
+function subscribeWorkers(){if(workersUnsub)workersUnsub();if(!auth.currentUser){workers=[];renderWorkers();return}workersUnsub=onSnapshot(query(collection(store,'users'),where('role','==','worker')),(snap)=>{workers=snap.docs.map(d=>({id:d.id,...d.data()}));renderWorkers()},(err)=>{console.error(err);message('Could not load worker profiles: '+err.message)})}
+
+document.getElementById('workerForm').addEventListener('submit',async e=>{e.preventDefault();const f=new FormData(e.target),v=Object.fromEntries(f.entries());try{const cred=await createUserWithEmailAndPassword(auth,v.email.trim(),v.password);const profile={uid:cred.user.uid,role:v.role,name:v.name.trim(),phone:v.phone.trim(),location:v.location.trim(),skills:v.skills.trim(),availability:v.availability,bio:v.bio.trim(),email:v.email.trim(),createdAt:Date.now()};await setDoc(doc(store,'users',cred.user.uid),profile);currentProfile=profile;e.target.reset();message('Your PieceWork Connect account has been created.');subscribeWorkers();showView('profileView','profileTab')}catch(err){message('Registration failed: '+err.message)}});
+document.getElementById('jobForm').addEventListener('submit',async e=>{e.preventDefault();if(!auth.currentUser){message('Please create an account or sign in before posting a job.');showView('registerView','profileTab');return}const f=new FormData(e.target),v=Object.fromEntries(f.entries());try{await addDoc(collection(store,'jobs'),{...v,payment:Number(v.payment)||0,employerId:auth.currentUser.uid,status:'open',createdAt:Date.now()});e.target.reset();message('Your job has been published online.');showView('jobsView','jobsTab')}catch(err){message('Could not publish job: '+err.message)}});
+
+document.getElementById('loginForm').addEventListener('submit',async e=>{e.preventDefault();const v=Object.fromEntries(new FormData(e.target).entries());try{await signInWithEmailAndPassword(auth,v.email.trim(),v.password);e.target.reset();message('Welcome back to PieceWork Connect.');showView('profileView','profileTab')}catch(err){message('Sign in failed: '+err.message)}});
+document.getElementById('logoutBtn').addEventListener('click',async()=>{await signOut(auth);message('You have signed out.')});
+function doSearch(){let q=document.getElementById('homeSearch').value;showView('jobsView','jobsTab');document.getElementById('jobSearch').value=q;renderJobs()}
+window.doSearch=doSearch;window.showView=showView;window.renderJobs=renderJobs;window.renderWorkers=renderWorkers;
+onAuthStateChanged(auth,async user=>{try{await loadProfile(user)}catch(e){console.error(e)}subscribeWorkers();document.getElementById('profileTab').innerHTML=user?'<b>◎</b>Account':'<b>◎</b>Register';renderProfile()});
+subscribeJobs();renderHome();renderJobs();renderWorkers();
+if ('serviceWorker' in navigator && (location.protocol==='https:' || location.hostname==='localhost')) { window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{})); }
+</script>
+</body>
+</html>
